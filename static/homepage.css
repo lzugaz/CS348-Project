@@ -1,0 +1,99 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('/static/images/homebackground.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333; /* Darker text for better legibility */
+}
+
+/* Header styles */
+.header {
+    width: 100%;
+    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for legibility */
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    margin-left: 2rem;
+    color: #fff; /* White text color */
+}
+
+/* Navigation styles */
+nav {
+    background: rgba(0, 0, 0, 0.8); /* Dark background for navigation */
+    color: #fff;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: flex-end; /* Align navigation items to the right */
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px; /* Spacing between nav items */
+}
+
+/* Additional styles for navigation buttons */
+nav ul li a {
+    background-color: #333; /* Button background color */
+    color: #fff; /* Button text color */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Button hover state color */
+}
+
+
+/* Main content styles */
+.section {
+    padding-top: 4rem; /* Add padding to account for fixed header */
+    padding-bottom: 2rem;
+    text-align: center; /* Center the content */
+}
+
+.section h2 {
+    color: #fff; /* White text for headings */
+    margin-bottom: 1rem;
+}
+
+.section p {
+    color: #fff; /* White text for paragraphs */
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8); /* Dark background for footer */
+    color: #fff; /* White text color */
+    position: fixed; /* Fixed at the bottom */
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .header h1,
+    nav ul li {
+        margin-left: 1rem; /* Less margin on smaller screens */
+    }
+}
