@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>Your Name</h1>
+        <p>Welcome to My Personal Website</p>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="section" id="about">
+        <h2>About Me</h2>
+        <p>Introduce yourself here. Talk about your background, experience, and what you do.</p>
+    </div>
+
+    <div class="section" id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="projects">
+            <!-- Project 1 -->
+            <div class="project">
+                <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="Project 1">
+                <h3>Project Title 1</h3>
+                <p>Description of Project 1</p>
+            </div>
+            <!-- Additional projects here -->
+        </div>
+    </div>
+
+    <div class="section" id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Skill 1</li>
+            <li>Skill 2</li>
+            <!-- Additional skills here -->
+        </ul>
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Contact</h2>
+        <form action="{{ url_for('contact') }}" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </div>
+</body>
+</html>
