@@ -1,7 +1,12 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, redirect, url_for, flash
+import sqlite3
 
-views = Blueprint(__name__, "views")
+views = Blueprint('views', __name__)
 
+def get_db_connection():
+    conn = sqlite3.connect('database.db')
+    conn.row_factory = sqlite3.Row
+    return conn
 
 @views.route("/")
 def home():
@@ -9,20 +14,41 @@ def home():
 
 @views.route("/about")
 def about():
-    return render_template("just a test")
+    return render_template("about.html")
 
-@views.route("portfolio")
+@views.route("/portfolio")
 def portfolio():
-    return render_template("just a test")
+    return "Portfolio Page"  # Temporary placeholder
 
-@views.route("skills")
+@views.route("/skills")
 def skills():
-    return render_template("just a test")
+    return "Skills Page"  # Temporary placeholder
 
-
-@views.route("contact")
+@views.route("/contact", methods=['GET', 'POST'])
 def contact():
-    return render_template("just a test")
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
 
+        # Save to the database
+        conn = get_db_connection()
+        cur = conn.cursor()
+        cur.execute('INSERT INTO messages (name, email, message) VALUES (?, ?, ?)',
+                    (name, email, message))
+        conn.commit()
+        conn.close()
 
+        flash('Message sent successfully!', 'success')
+        return redirect(url_for('views.home'))
 
+    return render_template("contact.html")
+
+@views.route("/messages")
+def messages():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM messages')
+    messages = cur.fetchall()
+    conn.close()
+    return render_template("messages.html", messages=messages)

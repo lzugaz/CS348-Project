@@ -2,145 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Ugaz - Home</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
-        /* Base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: url('/static/images/homebackground.png') no-repeat center center fixed;
-            background-size: cover;
-            color: #333; /* Darker text for better legibility */
-        }
-
-        /* Header styles */
-        .header {
-            width: 100%;
-            padding: 1rem 0;
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for legibility */
-            position: fixed; /* Fixed at the top */
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header h1 {
-            margin-left: 2rem;
-            color: #fff; /* White text color */
-        }
-
-        /* Navigation styles */
-        nav {
-            background: rgba(0, 0, 0, 0.8); /* Dark background for navigation */
-            color: #fff;
-            width: 100%;
-            padding: 0.5rem 2rem;
-            display: flex;
-            justify-content: flex-end; /* Align navigation items to the right */
-        }
-
-        nav ul {
-            list-style: none;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-left: 20px; /* Spacing between nav items */
-        }
-
-        /* Additional styles for navigation buttons */
-        nav ul li a {
-            background-color: #333; /* Button background color */
-            color: #fff; /* Button text color */
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        nav ul li a:hover {
-            background-color: #555; /* Button hover state color */
-        }
-
-        /* Main content styles */
-        .section {
-            padding-top: 5rem; /* Add padding to account for fixed header */
-            padding-bottom: 2rem;
-            text-align: center; /* Center the content */
-            min-height: 100vh; /* Minimum height for each section */
-        }
-
-        .section h2 {
-            color: #fff; /* White text for headings */
-            margin-bottom: 1rem;
-        }
-
-        .section p {
-            color: #fff; /* White text for paragraphs */
-        }
-
-        /* Footer styles */
-        .footer {
-            text-align: center;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.8); /* Dark background for footer */
-            color: #fff; /* White text color */
-            position: fixed; /* Fixed at the bottom */
-            bottom: 0;
-            width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .header h1,
-            nav ul li {
-                margin-left: 1rem; /* Less margin on smaller screens */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}">
+    <title>Home Page</title>
 </head>
 <body>
-    <div class="header">
-        <h1>Lucas Ugaz</h1>
-    </div>
+    <header>
+        <h1>Welcome to My Homepage for CS 348</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('views.home') }}">Home</a></li>
+                <li><a href="{{ url_for('views.about') }}">About</a></li>
+                <!-- <li><a href="{{ url_for('views.portfolio') }}">Portfolio</a></li>
+                <li><a href="{{ url_for('views.skills') }}">Skills</a></li> -->
+                <li><a href="{{ url_for('views.contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('views.messages') }}">Messages</a></li>
 
-    <nav>
-        <ul>
-            <li><a href="#about-section">About</a></li>
-            <li><a href="#portfolio-section">Portfolio</a></li>
-            <li><a href="#skills-section">Skills</a></li>
-            <li><a href="#contact-section">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="section" id="about-section">
-        <h2>About Me</h2>
-        <!-- Content for the About section -->
-    </div>
-
-    <div class="section" id="portfolio-section">
-        <h2>Portfolio</h2>
-        <!-- Content for the Portfolio section -->
-    </div>
-
-    <div class="section" id="skills-section">
-        <h2>Skills</h2>
-        <!-- Content for the Skills section -->
-    </div>
-
-    <div class="section" id="contact-section">
-        <h2>Contact</h2>
-        <!-- Content for the Contact section -->
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2024 Lucas Ugaz. All Rights Reserved.</p>
-    </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <p>Hello, my name is Lucas Ugaz.  I am a CS major at Purdue University and 
+                this is my part of of the project. This is my second time using Flask, but its my first time doing
+                 HTML and css.  In this website you will see my protfolio, about me, and also you will be able to send me a
+                  "message that will be saved using sqlight".  Thank you for taking the time and looking at my application.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Lucas Ugaz</p>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,65 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f3f5; /* Lighter background for a modern look */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    min-height: 100vh;
+}
+
+.message-container {
+    margin: 2em 0;
+    padding: 2em;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    border-left: 4px solid #4CAF50; /* Colorful accent on the side */
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin: 1em 0;
+}
+
+.message {
+    background: #f9f9f9; /* Slightly different background for each message */
+    border-radius: 4px;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.message p {
+    margin: 0.5em 0;
+    color: #555; /* Dark grey color for text */
+}
+
+.message strong {
+    color: #333; /* Darker color for labels */
+}
+
+/* Add some hover effects for interactive elements */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for button background color */
+}
+
+button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: default;
+}
